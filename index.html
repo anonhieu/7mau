@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <title>Viết Chữ 7 Màu Trong Game</title>
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,initial-scale=1.0">
+    <meta name="description" content="Trang web giúp các bạn viết chữ 7 màu trong game 1 cách dễ dàng">
+    <link rel="shortcut icon" href="https://i.kym-cdn.com/photos/images/original/001/552/663/229.jpg">
+    <meta name="keyword" content="viết chữ 7 màu trong game, cách viết chữ có màu trong game">
+    <meta property="og:title" content="Viết Chữ 7 Màu Trong Game | Troll Game">
+    <meta property="og:description" content="Trang web giúp bạn viết chữ 7 màu trong game 1 cách dễ dàng">
+    <meta property="og:image" content="https://i.kym-cdn.com/photos/images/original/001/552/663/229.jpg">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-----navtab------->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <!------toastr------>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- icon -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+        
+         :root {
+            --color: #262626;
+            --bg-color: #ffffff;
+            --line: #262626;
+            --hr: #cecece;
+            --footer: #252525;
+        }
+        
+        .light-mode {
+            --color: #fdfdfd;
+            --bg-color: #262626;
+            --line: #f747d0;
+            --hr: #777777;
+            --footer: #a3a2a2;
+        }
+        
+        .dark-light {
+            position: fixed;
+            bottom: 50px;
+            right: 30px;
+            background-color: rgb(46, 46, 46);
+            box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
+            padding: 6px 8px;
+            border-radius: 50%;
+            z-index: 3;
+            cursor: pointer;
+        }
+        
+        .dark-light svg {
+            width: 32px;
+            flex-shrink: 0;
+            fill: #2e2e2e;
+            stroke: #ffffff;
+            transition: 0.5s;
+        }
+        
+        .light-mode .dark-light svg {
+            fill: rgb(250, 252, 127);
+            stroke: rgb(250, 252, 127);
+        }
+        
+        .light-mode .profile-img {
+            border: 2px solid var(--bg-color);
+        }
+        
+        .light-mode .content-section ul {
+            background-color: var(--bg-color);
+        }
+        
+        .light-mode .pop-up__title {
+            border-color: var(--color);
+        }
+        
+        .light-mode .dropdown.is-active ul {
+            background-color: rgba(255, 255, 255, 0.94);
+        }
+        
+        body.light-mode:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.45) 100%);
+            -webkit-backdrop-filter: saturate(3);
+            backdrop-filter: saturate(3);
+        }
+        
+        @media all and (max-width: 600px) {
+            body .dark-light {
+                right: 10px;
+                bottom: 10px;
+            }
+            .dark-light svg {
+                width: 24px;
+            }
+        }
+        
+        hr {
+            background-color: var(--hr);
+        }
+        
+        #div_content {
+            padding: 20px;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            border: 2px solid var(--line);
+            background-color: var(--bg-color);
+            color: var(--color);
+        }
+        
+        html,
+        body {
+            background-image: linear-gradient(120deg, rgb(96, 99, 238), rgb(241, 112, 192)) !important;
+        }
+        
+        .dark {
+            position: relative;
+            font-family: Verdana;
+            font-size: 13px;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            margin: auto;
+            background-color: none;
+        }
+        
+        a:link {
+            color: var(--color);
+        }
+        
+        #div_footer {
+            padding: 10px 10px;
+            height: 5px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            font-size: 10px;
+            color: var(--footer);
+        }
+        
+        #div_logo {
+            text-align: center;
+            display: block;
+            /* background-image: linear-gradient(90deg, #7765e7, #aa6ad7) !important; */
+        }
+        
+        .ab {
+            position: absolute;
+            left: 128px;
+        }
+        
+        td {
+            width: 50%;
+        }
+        
+        button {
+            border-radius: 5px;
+            color: white;
+            background-color: #339e79;
+            border: none;
+            padding: 4px;
+        }
+        
+        #tab2 textarea {
+            width: 188px;
+            height: 25px;
+            overflow: hidden;
+            resize: none;
+            word-break: break-all;
+            -webkit-transition: all 1.5s;
+            -moz-transition: all 1.5s;
+        }
+        
+        #tab2 textarea:focus {
+            width: 190px;
+            height: 80px;
+            border: 1px solid rgb(234, 3, 255);
+        }
+    </style>
+    <script src="7mau.js"></script>
+    <script src="https://www.stuffbydavid.com/js/jscolor/jscolor.js"></script>
+
+</head>
+
+
+
+
+<body>
+    <div class="dark">
+
+        <div id="div_logo">
+            <span style=" font-size:10px; top:18px;">Code màu chữ trong game</span>
+            <br><span style='font-family:"Arial Black";font-size:42px;'>
+            <span style='color:#FF0000;'>T</span><span style='color:#EC0012;'>e</span><span style='color:#DA0024;'>x</span><span style='color:#C80036;'>t</span> <span style='color:#A3005B;'>C</span><span style='color:#91006D;'>o</span><span style='color:#7F007F;'>l</span><span style='color:#6D0091;'>o</span><span style='color:#5B00A3;'>r</span><span style='color:#4800B6;'>i</span><span style='color:#3600C8;'>z</span><span style='color:#2400DA;'>e</span><span style='color:#1200EC;'>r</span>
+            </span>
+        </div>
+
+        <div id="div_content">
+
+            <div class="dark-light">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+     <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+            </div>
+            <!-- tab -->
+            <ul class="nav nav-pills nav-fill" style="margin-top:5px; font-size: 16px;">
+                <li class="nav-item">
+                    <a href="#tab1" data-toggle="tab" class="nav-link active">Chữ 7 Màu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tab2" data-toggle="tab" class="nav-link">Troll Game</a>
+                </li>
+            </ul>
+            <hr>
+            <div class="tab-content">
+                <div class="tab-pane container active" id="tab1">
+                    <span style="font-weight:bold;">Step 1:</span> Nhập nội dung<br><br>
+                    <textarea style="max-width:500px;width:100%;" id="input_text">Hello word</textarea>
+                    <br><br><span style="font-weight:bold;">Step 2:</span> Chọn kiểu<br>
+                    <br>
+                    <select id="input_effect">
+                    <option value="1">Canh ngang</option>
+                    <option value="2">Canh giữa</option>
+                    <option value="4">1 màu</option>
+                    <option value="3">3 màu</option>
+                    <option value="6">7 màu</option>
+                    <option value="5">Ngẫu nhiên</option>
+                </select>
+                    <br><br><span style="font-weight:bold;">Step 3:</span> Chọn màu<br><br>
+                    <div>
+                        <div id="color_select1" style="position:absolute; visibility:visible">Màu bắt đầu: &nbsp;<input style="width:100px;" id="input_color1" class='ab color {hash:true,caps:true}' value='#FF0000'><br>Màu kết thúc: <input style="width:100px;" id="input_color2" class='ab color {hash:true,caps:true}' value='#0000FF'></div>
+                        <div id="color_select2" style="position:absolute; visibility:hidden">Màu đầu và cuối: <input style="width:100px;" id="input_color3" class='ab color {hash:true,caps:true}' value='#FF0000'><br>Màu ở giữa:&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="width:100px;" id="input_color4" class="ab color {hash:true,caps:true}"
+                                value='#0000FF'>
+                        </div>
+                        <div id="color_select3" style="position:absolute;visibility:hidden">
+
+                            Màu bắt đầu:
+                            <input style="width:100px;" id="input_color5" class="ab color {hash:true,caps:true}" value='#FF0000'><br>Màu ở giữa:<input style="width:100px;" id="input_color6" class="ab color {hash:true,caps:true}" value='#0000FF'><br>Màu
+                            kết thúc:
+                            <input style="width:100px;" id="input_color7" class="ab color {hash:true,caps:true}" value='#00FF00'>
+
+                        </div>
+                        <div id="color_select4" style="position:absolute; visibility:hidden">Màu: <input style="width:100px;" id="input_color8" class='color {hash:true,caps:true}' value='#FF0000'>
+                        </div>
+                        <div id="color_select5" style="position:absolute; visibility:hidden"><input type="button" value="Randomize!" onClick="randomize_colors()"><br>Căn chỉnh:<input type="checkbox" id="input_colorword"></div>
+                        <div id="color_select6" style="position:absolute; visibility:hidden">Cầu Vòng!!</div>
+                    </div><br><br><br><br>
+                    <b>Tùy chọn thêm</b><br><br>
+                    <table>
+                        <tr>
+                            <td><span style="font-weight:bold;">In đậm:</span>
+                            </td>
+                            <td><input type="checkbox" id="input_bold">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-style:italic;">In nghiêng:</span></td>
+                            <td><input type="checkbox" id="input_italic" checked>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span style="text-decoration: line-through;">Gạch ngang:</span></td>
+                            <td><input name="checkbox" type="checkbox" id="input_strike">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span style="text-decoration: underline;">Gạch chân:</span></td>
+                            <td><input name="checkbox" type="checkbox" id="input_s">
+                            </td>
+                        </tr>
+                    </table><br>
+                    <span style="font-weight:bold;">Step 5:</span> Xem thử (Lưu ý độ dài văn bản khi chat trong game)<br>
+                    <div id="div_preview"></div>
+                    <div><b>Kết Quả: </b> <button onclick="copy('output_bbcode')"><i class='bx bxs-copy'></i> Copy </button></div><br>
+                    <textarea style="max-width:500px;width:100%;" id="output_bbcode" rows="4" cols="50" readonly="true" value=""></textarea>
+
+                    <script type="text/javascript">
+                        textcolorizer_handle();
+                    </script>
+                </div>
+
+                <div class="tab-pane container fade" id="tab2">
+                    <center>Chỉnh sửa dữ liệu trước khi copy<br>Bấm <b>Copy</b> báo Thành Công là được
+                        <hr><b>Vị trí map</b></center>
+                    <table>
+                        <tr>
+                            <td>Thành bang:</td>
+                            <td><textarea id="1" value=""><link location=16100006,Thành Bang Là Nơi An Toàn Nhất,55,72,CAAAAMVobmCmqvWA></textarea>
+                            </td>
+                            <td><button onclick="copy('1')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Bồ gia thôn:</td>
+                            <td><textarea id="2" value=""><link location=16000001,Bồ Giả Thôn,77,168,AQAAAL1pbmABJPSA,1></textarea></td>
+                            <td>
+                                <button onclick="copy('2')">COPY</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Dương gia trấn:</td>
+                            <td><textarea id="3" value=""><link location=16000002,Dương Giả Trấn,45,33,AgAAAL1pbmACJPSA,1></textarea></td>
+                            <td>
+                                <button onclick="copy('3')">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Kim lăng:</td>
+                            <td> <textarea id="4" value=""><link location=16000003,Kim Lăng Nhăng,97,93,EwAAAL1pbmADJPSA,1></textarea>
+                            </td>
+                            <td><button onclick="copy('4')">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hàng châu:</td>
+                            <td> <textarea id="5" value=""><link location=16000006,Ra Hàng Châu SOLO,191,213,HgAAAEl9+2AGJPSA,2></textarea></td>
+                            <td>
+                                <button onclick="copy('5')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Thanh khâu:</td>
+                            <td> <textarea id="6" value=""><link location=16000026,Lên Thanh Khâu Bế Nhau,27,87,BgEAAL1pbmAaJPSA,1></textarea> </td>
+                            <td><button onclick="copy('6')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Tiêu dao quan:</td>
+                            <td> <textarea id="7" value=""><link location=16000011,Ku Chỉ Ngược,70,40,GwAAAJ2U6mALJPSA,1></textarea>
+                            </td>
+                            <td> <button onclick="copy('7')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Côn lôn sơn:</td>
+                            <td> <textarea id="8" value=""><link location=16000022,Côn Sơn Tường,74,81,MAAAAEdC+GAWJPSA,2></textarea>
+                            </td>
+                            <td><button onclick="copy('8')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Thần cơ doanh:</td>
+                            <td> <textarea id="9" value=""><link location=16000013,Thần Kinh Doanh,55,59,IgAAAJYl42ANJPSA,1></textarea>
+                            </td>
+                            <td><button onclick="copy('9')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Vạn yêu cung:</td>
+                            <td> <textarea id="10" value=""><link location=16000012,Vạn Yêu Quái,19,9,JAAAAMYH72AMJPSA,1></textarea>
+                            </td>
+                            <td><button onclick="copy('10')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Thiên công các:</td>
+                            <td> <textarea id="11" value=""><link location=16000029,Thiên Công Công,108,120,DQAAANmn+mAdJPSA,3></textarea>
+                            </td>
+                            <td> <button onclick="copy('11')">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Kim sa kính:</td>
+                            <td> <textarea id="12" value=""><link location=16000224,Kim Gần Kính,45,64,CQAAAARf7mDgJPSA,1></textarea>
+                            </td>
+                            <td>
+                                <button onclick="copy('12')">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Trấn ngoại ô:</td>
+                            <td> <textarea id="13" value=""><link location=16000004,Trấn Nội Ô,94,66,GwAAAMvj72AEJPSA,1></textarea>
+                            </td>
+                            <td><button onclick="copy('13')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Lan nhược tự:</td>
+                            <td> <textarea id="14" value=""><link location=16000005,Lan Nhược Tự Thẩm Du,36,39,JwAAAITx+2AFJPSA,3></textarea> </td>
+                            <td><button onclick="copy('14')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Lan nhược địa cung:</td>
+                            <td> <textarea id="15" value=""><link location=16000008,Lan Nhược Tử Cung,116,81,EAAAAITx+2AIJPSA,3></textarea></td>
+                            <td> <button onclick="copy('15')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Hắc phong động:</td>
+                            <td> <textarea id="16" value=""><link location=16000007,Hắc Phong Động Đực,48,47,JQAAANUb+GAHJPSA,1></textarea></td>
+                            <td> <button onclick="copy('16')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Vong xuyên:</td>
+                            <td> <textarea id="17" value=""><link location=16000009,Vong Hồn,144,139,EQAAAJM+5GAJJPSA,1></textarea> </td>
+                            <td><button onclick="copy('17')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Ti lộ cổ đạo:</td>
+                            <td> <textarea id="18" value=""><link location=16000010,Ti Lộ Cổ Mộ,82,20,DAAAAHSd9mAKJPSA,1></textarea>
+                            </td>
+                            <td><button onclick="copy('18')">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hoàng tuyền:</td>
+                            <td> <textarea id="19" value=""><link location=16000014,Ra Hoàng Tuyền Ngắm Hoa,55,82,FwAAAL1pbmAOJPSA,1></textarea>
+                            </td>
+                            <td>
+                                <button onclick="copy('19')">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phong đô:</td>
+                            <td> <textarea id="20" value=""><link location=16000015,Phong Ba Bão Táp,70,68,IwAAANAG9WAPJPSA,1></textarea>
+                            </td>
+                            <td><button onclick="copy('20')">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Địa ngục:</td>
+                            <td> <textarea id="21" value=""><link location=16000016,Địa Ngục Là Thiên Đường,86,55,FQAAAEAslGAQJPSA,1></textarea>
+                            </td>
+                            <td> <button onclick="copy('21')">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Thiên cung:</td>
+                            <td> <textarea id="22" value=""><link location=16000017,Thiên Cung Kế Bên Địa Ngục,129,66,BQAAAL1pbmARJPSA,1></textarea></td>
+                            <td> <button onclick="copy('22')">COPY</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Đấu suất cung:</td>
+                            <td> <textarea class="aa" id="23" value=""><link location=16000018,Đâu Suất Cung 9 Tầng Mây,146,74,BgAAAL1pbmASJPSA,1></textarea>
+                            </td>
+                            <td> <button onclick="copy('23')">COPY</button>
+                            </td>
+                        </tr>
+                    </table> <br>
+                    <center><b>Trang bị</b></center>
+                    <table>
+                        <tr>
+                            <td>Mũ:</td>
+                            <td>
+                                <textarea id="24" value=""><link item=23020425,BAEKEAuUY18pAAAA,Nón Bảo Hiểm VIP +99,C000C0></textarea></td>
+                            <td> <button onclick="copy('24')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Phất:</td>
+                            <td> <textarea id="25" value=""><link item=23003684,BBEKEIOKS18YAAAA,(Quỷ) Chổi Quét Nhà +99,C000C0></textarea></td>
+                            <td>
+                                <button onclick="copy('25')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Áo:
+                            </td>
+                            <td> <textarea id="26" value=""><link item=23030165,BAQNEAHAKVw5AAAA,Áo Zú Có Ren +99,C000C0></textarea> </td>
+                            <td><button onclick="copy('26')">COPY</button></td>
+                        </tr>
+                        <tr>
+                            <td>Quần:</td>
+                            <td> <textarea id="27" value=""><link item=23040103,BDANEO8pVF0HAAAA,Quần Đùi 7 Màu· Nghịch Thiên +99,C000C0></textarea></td>
+                            <td> <button onclick="copy('27')">COPY</button></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <center><b>Linh thú</b></center>
+                    <table>
+                        <tr>
+                            <td>Con mèo ngu ngốc:</td>
+                            <td> <textarea id="28" value=""><link lingshou=BQQNECffP1oAAAAA,Con Mèo Ngu Ngốc,222704109,Chú Không Tên></textarea>
+                            </td>
+                            <td>
+                                <button onclick="copy('28')">COPY</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div><br>
+
+                <div id="div_footer">Edit by <a href="https://fb.com/profile.xtml">Minh Hiếu</a> | <a href="https://anonhieu.github.io/mkt">Trang Chủ</a>
+                </div>
+            </div>
+            <br><br>
+            <script>
+                const toggleButton = document.querySelector('.dark-light');
+
+                toggleButton.addEventListener('click', () => {
+                    document.body.classList.toggle('light-mode');
+                });
+            </script>
+            <script>
+                function copy(id) {
+                    var copy = document.getElementById(id);
+                    copy.select();
+                    document.execCommand("copy");
+                    notifySuccess("Copy thành công ");
+                }
+
+                function notifySuccess(str) {
+                    toastr.success(str)
+                }
+            </script>
+
+        </div>
+</body>
+
+</html>
