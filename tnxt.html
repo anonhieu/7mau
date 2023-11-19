@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Full Đáp Án Tình Nghĩa Xuân Thu Thiện Nữ 2</title>
+  <style>
+    /* CSS để tạo giao diện */
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+    .success-message {
+      display: none;
+      color: green;
+    }
+    .success-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+#cell-to-hide {
+  display: none;
+}
+  </style>
+</head>
+<body>
+  <div>
+    <input type="text" id="searchInput" placeholder="Tìm kiếm nhanh">
+    <button id="clearButton">Xóa</button>
+  </div>
+  <br>
+  <table>
+    <tr>    
+    <td rowspan="4">Bồ Gia Thôn</td>
+      <td>(78,11)</td>
+      <td>Y Quan Cầm Thú</td>
+    </tr>
+    <tr>
+      <td>(112,81)</td>
+      <td>Diện Diện Tương Thứ</td>
+    </tr>
+    <tr>
+      <td>(143,99)</td>
+      <td>Bạch Đầu Như Tân</td>
+    </tr>
+    <tr>
+      <td>(64,72)</td>
+      <td>Nghi Trộm Rìu</td>
+    </tr>
+    <tr>
+        <td rowspan="4">Dương Gia Trấn</td>
+      <td>(20,67)</td>
+      <td>Lâm Uyên Tiễn Ngư</td>
+    </tr>
+    <tr>
+      <td>(53,23)</td>
+      <td>Môn Khả La Tước</td>
+    </tr>
+    <tr>
+      <td>(59,44)</td>
+      <td>Tăng Đa Chúc Thiểu</td>
+    </tr>
+    <tr>
+      <td>(48,26)</td>
+      <td>Công Bằng</td>
+    </tr>
+    <tr>
+      <td rowspan="3">Trấn Ngoại Ô</td>
+      <td>(50,43)</td>
+      <td>Đổi Trắng Thay Đen</td>
+    </tr>
+    <tr>
+      <td>(24,31)</td>
+      <td>Dữ Hổ Mưu Bì</td>
+    </tr>
+    <tr>
+      <td>(59,55)</td>
+      <td>Lý Đại Đào Cương</td>
+    </tr>
+    <tr>
+      <td>Kim Lăng (108,123)</td>
+      <td>Tiểu Điểu Y Nhân</td>
+    </tr>
+    <tr>
+      <td>Kim Lăng (118,152)</td>
+      <td>Đảo Lý Tương Nghênh</td>
+    </tr>
+    <tr>
+      <td>Kim Lăng (59,68)</td>
+      <td>Hữu Cước Dương Xuân</td>
+    </tr>
+    <tr>
+      <td>Kim Lăng (49,67)</td>
+      <td>Hữu Cước Dương Xuân</td>
+    </tr>
+    <tr>
+      <td>Kim Lăng (30,37)</td>
+      <td>Cương Cử Mục Trương</td>
+    </tr>
+    <tr>
+      <td>Hàng Châu (100,82)</td>
+      <td>Khó nói</td>
+    </tr>
+    <tr>
+      <td>Hàng Châu (144,82)</td>
+      <td>Mãi Độc Hoàn Châu</td>
+    </tr>
+    <tr>
+      <td>Hàng Châu (28,115)</td>
+      <td>Giang Lang Tài Tận</td>
+    </tr>
+    <tr>
+      <td>Hàng Châu (</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Hàng Châu (</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Ô 8</td>
+      <td>Ô 9</td>
+    </tr>
+</table>
+    <table id="table1">
+    <tr>
+      <td>Ô 01</td>
+      <td>Ô 02</td>
+      <td>Ô 03</td>
+    </tr>
+    <tr>
+      <td>Ô 05</td>
+      <td>Ô 06</td>
+      <td rowspan="2">Ô 07</td>
+    </tr>
+    <tr>
+      <td>Ô 08</td>
+      <td>Ô 09</td>
+    </tr>
+</table>
+<table id="table2">
+    <tr>
+      <td>Ô 101</td>
+      <td>Ô 102</td>
+      <td>Ô 103</td>
+    </tr>
+    <tr>
+      <td>Ô 104</td>
+      <td>Ô 105</td>
+      <td>Ô 106</td>
+    </tr>
+    <tr>
+      <td id="cell-to-hide">Ô 107</td>
+      <td>Ô 108</td>
+      <td>Ô 109</td>
+    </tr>
+</table>
+  <br>
+  <div class="success-message">Copy thành công!</div>
+
+  <script>
+    // JavaScript để thực hiện các chức năng
+    const searchInput = document.getElementById('searchInput');
+    const clearButton = document.getElementById('clearButton');
+    const table = document.querySelector('table');
+    const successMessage = document.querySelector('.success-message');
+
+    // Xử lý sự kiện khi người dùng gõ vào ô tìm kiếm
+    searchInput.addEventListener('input', function() {
+  const searchTerm = searchInput.value.toLowerCase();
+  const tables = document.querySelectorAll('table');
+
+  for (let t = 0; t < tables.length; t++) {
+    const table = tables[t];
+    const rows = table.getElementsByTagName('tr');
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i];
+      const cells = row.getElementsByTagName('td');
+      let rowVisible = false;
+      for (let j = 0; j < cells.length; j++) {
+        const cellText = cells[j].textContent.toLowerCase();
+        if (cellText.includes(searchTerm)) {
+          rowVisible = true;
+          break;
+        }
+      }
+      if (rowVisible) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    }
+  }
+});
+clearButton.addEventListener('click', function() {
+  searchInput.value = '';
+  const rows = document.querySelectorAll('table tr');
+  for (let i = 0; i < rows.length; i++) {
+    rows[i].style.display = '';
+  }
+});
+
+
+    // Xử lý sự kiện khi người dùng click vào nút xóa
+    clearButton.addEventListener('click', function() {
+      searchInput.value = '';
+      const rows = table.getElementsByTagName('tr');
+      for (let i = 0; i < rows.length; i++) {
+        rows[i].style.display = '';
+      }
+    });
+
+    // Xử lý sự kiện khi người dùng click vào ô trong bảng
+    table.addEventListener('click', function(event) {
+      const target = event.target;
+      if (target.tagName === 'TD') {
+        const textToCopy = target.textContent;
+        navigator.clipboard.writeText(textToCopy)
+          .then(() => {
+            successMessage.style.display = 'block';
+            setTimeout(function() {
+              successMessage.style.display = 'none';
+            }, 2000);
+          })
+          .catch((error) => {
+            console.error('Lỗi khi copy văn bản:', error);
+          });
+      }
+    });
+    const table1 = document.getElementById("table1");
+    const table2 = document.getElementById("table2");
+
+    table1.addEventListener("copy", (event) => {
+  event.preventDefault();
+});
+
+    table2.addEventListener("copy", (event) => {
+  event.preventDefault();
+});
+  </script>
+</body>
+</html
