@@ -4,12 +4,31 @@
   <title>Full Đáp Án Tình Nghĩa Xuân Thu Thiện Nữ 2</title>
   <style>
     /* CSS để tạo giao diện */
+    * {
+            box-sizing: border-box;
+        }
+        body {
+      background-image: linear-gradient(120deg, rgb(96, 99, 238), rgb(241, 112, 192)) !important;
+        }
+
     table {
+      background-color: #f8f8f8;
       border-collapse: collapse;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      max-width: 600px;
     }
     td {
-      border: 1px solid black;
+      border: 1px solid black ;
       padding: 5px;
+    }
+    h1 {
+      align-items: center;
+    }
+    #table1 td {
+      border: none;
+      padding: 15px;
     }
     .success-message {
       display: none;
@@ -25,147 +44,226 @@
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-#cell-to-hide {
-  display: none;
+.search {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
 }
   </style>
 </head>
 <body>
-  <div>
+  <div class="search">
     <input type="text" id="searchInput" placeholder="Tìm kiếm nhanh">
     <button id="clearButton">Xóa</button>
   </div>
+  <h1>Giải Đố</h1>
   <br>
   <table>
     <tr>    
     <td rowspan="4">Bồ Gia Thôn</td>
-      <td>(78,11)</td>
+      <td>78,11</td>
       <td>Y Quan Cầm Thú</td>
     </tr>
     <tr>
-      <td>(112,81)</td>
+      <td>112,81</td>
       <td>Diện Diện Tương Thứ</td>
     </tr>
     <tr>
-      <td>(143,99)</td>
+      <td>143,99</td>
       <td>Bạch Đầu Như Tân</td>
     </tr>
     <tr>
-      <td>(64,72)</td>
+      <td>64,72</td>
       <td>Nghi Trộm Rìu</td>
     </tr>
     <tr>
         <td rowspan="4">Dương Gia Trấn</td>
-      <td>(20,67)</td>
+      <td>20,67</td>
       <td>Lâm Uyên Tiễn Ngư</td>
     </tr>
     <tr>
-      <td>(53,23)</td>
+      <td>53,23</td>
       <td>Môn Khả La Tước</td>
     </tr>
     <tr>
-      <td>(59,44)</td>
+      <td>59,44</td>
       <td>Tăng Đa Chúc Thiểu</td>
     </tr>
     <tr>
-      <td>(48,26)</td>
+      <td>48,26</td>
       <td>Công Bằng</td>
     </tr>
     <tr>
       <td rowspan="3">Trấn Ngoại Ô</td>
-      <td>(50,43)</td>
+      <td>50,43</td>
       <td>Đổi Trắng Thay Đen</td>
     </tr>
     <tr>
-      <td>(24,31)</td>
+      <td>24,31</td>
       <td>Dữ Hổ Mưu Bì</td>
     </tr>
     <tr>
-      <td>(59,55)</td>
+      <td>59,55</td>
       <td>Lý Đại Đào Cương</td>
     </tr>
     <tr>
-      <td>Kim Lăng (108,123)</td>
+      <td rowspan="5">Kim Lăng</td>
+      <td>108,123</td>
       <td>Tiểu Điểu Y Nhân</td>
     </tr>
     <tr>
-      <td>Kim Lăng (118,152)</td>
+      <td>118,152</td>
       <td>Đảo Lý Tương Nghênh</td>
     </tr>
     <tr>
-      <td>Kim Lăng (59,68)</td>
+      <td>59,68</td>
       <td>Hữu Cước Dương Xuân</td>
     </tr>
     <tr>
-      <td>Kim Lăng (49,67)</td>
+      <td>49,67</td>
       <td>Hữu Cước Dương Xuân</td>
     </tr>
     <tr>
-      <td>Kim Lăng (30,37)</td>
+      <td>30,37</td>
       <td>Cương Cử Mục Trương</td>
     </tr>
     <tr>
-      <td>Hàng Châu (100,82)</td>
+      <td rowspan="5">Hàng Châu</td>
+      <td>100,82</td>
       <td>Khó nói</td>
     </tr>
     <tr>
-      <td>Hàng Châu (144,82)</td>
+      <td>144,82</td>
       <td>Mãi Độc Hoàn Châu</td>
     </tr>
     <tr>
-      <td>Hàng Châu (28,115)</td>
+      <td>28,115</td>
       <td>Giang Lang Tài Tận</td>
     </tr>
     <tr>
-      <td>Hàng Châu (</td>
-      <td></td>
+      <td>69,178</td>
+      <td>Cáo Mượn Oai Hùm</td>
     </tr>
     <tr>
-      <td>Hàng Châu (</td>
-      <td></td>
+      <td>13,167</td>
+      <td>Lão Bạng Sinh Châu</td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
+      <td rowspan="2">Thanh Khâu</td>
+      <td>55,52</td>
+      <td>Duyên Mộc Cầu Ngư</td>
     </tr>
     <tr>
-      <td></td>
-      <td>Ô 8</td>
-      <td>Ô 9</td>
+      <td>63,23</td>
+      <td>Đào Thoát</td>
+    </tr>
+    <tr>
+      <td colspan="2">Ti Lộ Cổ Đạo</td>
+      <td>Đơn Thương Độc Mã</td>
+    </tr>
+    <tr>
+      <td colspan="2">Thiên Công Các</td>
+      <td>Quỷ Phủ Thần Công</td>
+    </tr>
+    <tr>
+      <td colspan="2">Côn Lôn Sơn</td>
+      <td>Rút Đao Tương Trợ</td>
+    </tr>
+    <tr>
+      <td colspan="2">Tiêu Dao Quan</td>
+      <td>Bằng Trình Vạn Lý</td>
+    </tr>
+    <tr>
+      <td colspan="2">Thần Cơ Doanh</td>
+      <td>Võ Nghệ Cao Cường</td>
     </tr>
 </table>
+<h1>Tìm Map</h1>
     <table id="table1">
-    <tr>
-      <td>Ô 01</td>
-      <td>Ô 02</td>
-      <td>Ô 03</td>
-    </tr>
-    <tr>
-      <td>Ô 05</td>
-      <td>Ô 06</td>
-      <td rowspan="2">Ô 07</td>
-    </tr>
-    <tr>
-      <td>Ô 08</td>
-      <td>Ô 09</td>
-    </tr>
-</table>
-<table id="table2">
-    <tr>
-      <td>Ô 101</td>
-      <td>Ô 102</td>
-      <td>Ô 103</td>
-    </tr>
-    <tr>
-      <td>Ô 104</td>
-      <td>Ô 105</td>
-      <td>Ô 106</td>
-    </tr>
-    <tr>
-      <td id="cell-to-hide">Ô 107</td>
-      <td>Ô 108</td>
-      <td>Ô 109</td>
-    </tr>
+      <tr>
+        <td>Thôn xá ngoại, cổ thành bàng...<br>Ân cần tạc dạ tam canh...</td>
+        <td>Bồ Gia Thôn</td>
+      </tr>
+      <tr>
+        <td>Nhàn mộng giang nam mai mai...<br>Nhân ngữ dịch biên kiều</td>
+        <td>Dương Gia Trấn</td>
+      </tr>
+      <tr>
+        <td>Nga mi hận mãn tam sương...<br>Phong định hàn vân do kinh...</td>
+        <td>Trấn Ngoại Ô</td>
+      </tr>
+      <tr>
+        <td>Hoa dại bên cầu Chu Tước...<br>Cựu thì vương tạ tiền yến...</td>
+        <td>Kim Lăng</td>
+      </tr>
+      <tr>
+        <td>Thủy quang liễm liễm tinh phương...<br>Dục bả tây hồ tỉ tây...</td>
+        <td>Hàng Châu</td>
+      </tr>
+      <tr>
+        <td>Bạch hổ hướng nguyệt hiệu sơn...<br>Cựu thời vương tạ đường tiền...</td>
+        <td>Thanh Khâu</td>
+      </tr>
+      <tr>
+        <td>Giác thanh suy triêt mai hoa...<br>Bạch nhạn tây phong tử tắc...</td>
+        <td>Ti Lộ Cổ Đạo</td>
+      </tr>
+      <tr>
+        <td>Tả thiên địa tam phân tạo...<br>Hoài mặc định nhất khóa tượng...</td>
+        <td>Thiên Công Các</td>
+      </tr>
+      <tr>
+        <td>Hoàng hà tây lai quyết côn lôn....</td>
+        <td>Côn Lôn Sơn</td>
+      </tr>
+      <tr>
+        <td>Bạch vân hoàng hạc đạo nhân...<br>Vũ y thường đái tiên hà...</td>
+        <td>Tiêu Dao Quan</td>
+      </tr>
+      <tr>
+        <td>Túy lý khiêu đãng...<br>Bát bách lý...</td>
+        <td>Thần Cơ Doanh</td>
+      </tr>
+      <tr>
+        <td>Yêu hồ giảo thỏ loạn thoán...<br>Phách nhai tà quải vạn niên...</td>
+        <td>Vạn Yêu Cung</td>
+      </tr>
+      <tr>
+        <td>Nguyệt chiếu kinh sa...<br>kim sinh vô hối kim sinh...</td>
+        <td>Lan Nhược Tự</td>
+      </tr>
+      <tr>
+        <td>Sơn vương cao diệu, hải nguyệt...<br>A lan nhược thuộc, ngọc dịch....</td>
+        <td>Lan Nhược Địa Cung</td>
+      </tr>
+      <tr>
+        <td>Dưỡng tính tu chân ngao nhật...<br>Tĩnh ẩn thâm sơn vô tục lự...</td>
+        <td>Hắc Phong Động</td>
+      </tr>
+      <tr>
+        <td>Thập niên sinh tử...<br>Tam đồ hà bạn</td>
+        <td>Vong Xuyên</td>
+      </tr>
+      <tr>
+        <td>Bạch nhạn tây phong...<br>Giác thanh suy triệt....</td>
+        <td>Ti Lộ Cổ Đạo</td>
+      </tr>
+      <tr>
+        <td>Hoa bỉ ngạn...<br>Thiên niên bão hận...</td>
+        <td>Hoàng Tuyền</td>
+      </tr>
+      <tr>
+        <td>Quỷ môn vô quy khách...<br>Tương phùng luận ý khí...</td>
+        <td>Phong Đô</td>
+      </tr>
+      <tr>
+        <td>Sâm sâm mãn đại giai bạch...<br>Khất thế ân cừu thành báo...</td>
+        <td>Địa Ngục</td>
+      </tr>
+      <tr>
+        <td>Ngã dục thừa phong...<br>Khởi vũ lộng thanh...</td>
+        <td>Thiên Cung</td>
+      </tr>
 </table>
   <br>
   <div class="success-message">Copy thành công!</div>
@@ -240,15 +338,13 @@ clearButton.addEventListener('click', function() {
       }
     });
     const table1 = document.getElementById("table1");
-    const table2 = document.getElementById("table2");
 
     table1.addEventListener("copy", (event) => {
   event.preventDefault();
 });
 
-    table2.addEventListener("copy", (event) => {
-  event.preventDefault();
-});
   </script>
+  Trang web đang được phát triển, mọi ý kiến đóng góp liện hệ : <a href="https://www.facebook.com/profile.xtml/">Minh Hiếu</a><br><br><br><br>
+
 </body>
 </html
