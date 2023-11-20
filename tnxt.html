@@ -13,27 +13,58 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@900&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <!---ruồi--->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://static1.fshare.vn/js/flies-obj.js"></script>
   <style>
     /* CSS để tạo giao diện */
     * {
-            box-sizing: border-box;
-        }
-       body {
-      background-image: linear-gradient(120deg, rgb(96, 99, 238), rgb(241, 112, 192)) !important;
-            padding: 20px;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 500px;  
-            font-family: 'Roboto', sans-serif;
-            font-weight: 250;
-              }
+      box-sizing: border-box;
+    }
+    body {
+      margin: auto;
+      text-align: center;
+      width: 100%;
+      max-width: 750px;  
+      font-family: 'Roboto', sans-serif;
+      font-weight: 250;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	    background-size: 400% 500%;
+	    animation: gradient 15s ease infinite;
+	    height: 100vh;
+    }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+    }
     table {
-      background-color: #f8f8f8;
+      background-color: #ffffff;
       border-collapse: collapse;
+      background-attachment: fixed;
       border-radius: 10px;
       display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
       justify-content: center;
       max-width: 600px;
+      opacity: 0.9;
+      color: rgb(0, 0, 0) !important;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
+    }
+    p {
+      color: #ffffff;
+    }
+    a {
+      text-decoration: none
     }
     td {
       border: 1px solid black ;
@@ -53,21 +84,21 @@
       color: green;
     }
     .success-message {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.search {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 1000
-}
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .search {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000
+    }
 
   </style>
 </head>
@@ -77,8 +108,7 @@
     <button id="clearButton">Xóa</button>
   </div>
   <h1>Giải Đố</h1>
-  Nhấp vào đáp án để tự động copy<br>
-  <br>
+  <p>Nhấp vào đáp án để tự động copy</p>
   <table>
     <tr>    
     <td rowspan="4">Bồ Gia Thôn</td>
@@ -142,7 +172,7 @@
     </tr>
     <tr>
       <td>49,67</td>
-      <td>Thiên Kim Mãi Lân</td>
+      <td>Hữu Cước Dương Xuân</td>
     </tr>
     <tr>
       <td>30,37</td>
@@ -365,6 +395,6 @@ clearButton.addEventListener('click', function() {
 
   </script>
   <p style="font-size: 13px;text-align: center;"><a href="index.html">Trang chủ</a><br>
-  Trang web đang được phát triển, mọi ý kiến đóng góp liên hệ : <a href="https://www.facebook.com/profile.xtml/">Minh Hiếu</a></p><br><br><br>
+  Trang web đang được phát triển, mọi ý kiến đóng góp liện hệ : <a href="https://www.facebook.com/profile.xtml/">Minh Hiếu</a></p><br><br><br>
 </body>
 </html
